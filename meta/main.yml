@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Robilou
+  description: Ansible mariadb role 
+  company: your company (optional)
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.9
+  
+  platforms:
+  - name: FreeBSD
+    versions:
+     - 10.2
+     - 10.1
+     - 10.0
+     - 9.3
+     - 9.2
+
+  categories:
+    - sql
+
+dependencies: []

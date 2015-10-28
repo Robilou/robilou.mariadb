@@ -1,0 +1,7 @@
+---
+- name: CREATE DATASET mysql 
+  sudo: yes
+  zfs:  name={{zfs_pool}}/mysql  state=present mountpoint=/var/db/mysql recordsize='8k' quota='10G'
+
+
+  

@@ -1,0 +1,34 @@
+---
+# tasks file for mariadb
+
+- name: INCLUDE zfs.yml
+  include: zfs.yml 
+  when: zfs-set
+
+- name: INSTALL mariadb55
+  sudo: yes
+  pkgng: name={{ item }} state=present
+  with_items:
+      - mariadb55-client
+      - mariadb55-server
+
+- name: COPY TEMPLATE my.cnf
+  template: 
+             backup: yes
+             src: my.cnf.j2
+             dest: /usr/local/etc/my.cnf  
+             owner: root 
+             group: wheel 
+             mode:  0420
+
+
+- name: ENABLE db into rc.conf.
+  sudo: yes
+  shell: sysrc mysql_enable=YES  
+  notify: 
+    - start db
+
+
+# Jeste tady pridat nastaveni hesla root
+
+# Jeste vymazat test db

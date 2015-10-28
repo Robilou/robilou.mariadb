@@ -1,0 +1,4 @@
+---
+# handlers file for mariadb
+- name: start db
+  action: service name=mysql-server state=started
