@@ -1,9 +1,7 @@
 ---
- - hosts: freebsd
-   
+ - hosts: databases
    become: yes
    become_method: sudo
-   
-   
+
    roles:
-    - mysql 
+    - Robilou.MariaDB
