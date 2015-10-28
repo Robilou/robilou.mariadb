@@ -9,8 +9,8 @@
   sudo: yes
   pkgng: name={{ item }} state=present
   with_items:
-      - mariadb55-client
-      - mariadb55-server
+      - mariadb100-client
+      - mariadb100-server
 
 - name: COPY TEMPLATE my.cnf
   template: 
